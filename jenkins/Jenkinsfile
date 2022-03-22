@@ -18,6 +18,13 @@ pipeline {
         CI = 'true'
     }
     stages {
+        stage('Echoing') {
+            steps {
+                container('node'){
+                sh 'echo "Hello"'
+            }
+            }
+        }
         stage('Build') {
             steps {
                 container('node'){
